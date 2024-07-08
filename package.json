@@ -1,0 +1,25 @@
+{
+  "name": "pnpm-local-file-dependencies-repro",
+  "type": "module",
+  "version": "0.0.1",
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "description": "pnpm local file dependencies repro",
+  "author": "chris <chris@bumblehead.com>",
+  "main": "./src/esm-main1.js",
+  "exports": {
+    "import": "./src/esm-main1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iambumblehead/pnpm-local-file-dependencies-repro.git"
+  },
+  "dependencies": {
+    "cjsmodule": "file:./cjsmodule",
+    "pnpm": "^9.5.0"
+  },
+  "scripts": {
+    "test:npm": "rm -rf node_modules && npm install && node --test test.js",
+    "test:pnpm": "rm -rf node_modules && npm install pnpm && pnpm install && node --test test.js"
+  }
+}
